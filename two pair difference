@@ -1,1 +1,33 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
+using namespace std;
+
+int main(){
+    int n;
+    int a[n];
+    
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int start=0;
+    int end=1;
+    int target=11;
+    while(start<n && end<n){
+        int d=a[end]-a[start];
+        if(d==target){
+            cout<<start<<" "<<end;
+            break;
+        }
+        
+        else if(d>target){
+            start++;
+        }
+        else{
+           end++;
+        }
+    }
+
+}
