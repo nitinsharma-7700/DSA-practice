@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
+using namespace std;
+int idx(int a[][3],int row,int col){
+int maxi=INT_MIN;
+int index;
+for(int i=0;i<row;i++){
+    int sum=0;
+    for(int j=0;j<col;j++){
+        sum=sum+a[i][j];
+    }
+    if(maxi<sum){
+        maxi=sum;
+        index=i;
+    }
+    
+    
+}
+return index;
+}
+
+
+int main(){
+    int a[4][3]={1,2,3,4,5,6,7,8,9,10,1,12};
+    cout<<idx(a,4,3);
+}
