@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
+
+using namespace std;
+
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int target=14;
+    for(int i=0;i<n-2;i++){
+        for(int j=i+1;j<n-1;j++){
+            int find=target-a[i]-a[j];
+            int start=j+1,end=n-1;
+            while(start<=end){
+                int mid=start+(end-start)/2;
+                if(a[mid]==find){
+                    cout<<i<<" ";
+                    cout<<j<<" ";
+                    cout<<mid<<" ";
+                    break;
+                    
+                }
+                else if(a[mid]<find){
+                    start=mid+1;
+                }
+                else {
+                    end=mid-1;
+                }
+            }
+            
+    }
+    }
+    
+
+}
