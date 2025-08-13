@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int r[4][4]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+	int top=0,bottom=3,left=0,right=3;
+	while(top<=bottom && left<=right){
+	    for(int j=left;j<=right;j++){
+	        cout<<r[top][j]<<" ";
+	    }
+	        top++;
+	   
+	    for(int i=top;i<=bottom;i++){
+	        cout<<r[i][right]<<" ";
+	        
+	    }
+	        right--;
+	   
+	    if(top<=bottom){
+	    for(int j=right;j>=left;j--){
+	        cout<<r[bottom][j]<<" ";
+	    }  
+	        bottom--;
+	    }
+	    
+	    if(left<=right){
+	    for(int i=bottom;i>=top;i--){
+	        cout<<r[i][left]<<" ";
+	    } 
+	        left++;
+	    }
+	    
+	}
+	
+}
